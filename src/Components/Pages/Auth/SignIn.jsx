@@ -44,7 +44,7 @@ function SignIn (){
                                 token:response.data.token, 
                                 role:response.data.payload.user.role,
                                 email:response.data.payload.user.email,
-                                phone:response.data.payload.user.phones
+                                phone:response.data.payload.user.phone
                     }
                  });
                  localStorage.setItem('token',response.data.token)
