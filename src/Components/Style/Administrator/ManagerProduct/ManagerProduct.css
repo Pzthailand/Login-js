@@ -1,0 +1,24 @@
+.Product-Title{
+  margin-top: 50px;
+  font-size: 25px;
+  font-weight: 500;
+  color: #000000;
+  margin-bottom: 25px;
+}
+
+/*Grid Row Table Manage Product*/
+.Product-container {
+    display: grid;
+    /*grid-template-columns: auto auto auto auto auto auto auto auto; /*Fix Row*/ 
+    grid-template-columns: 50px 150px 100px 100px 100px 100px 100px 100px 70px;
+    /*background-color: #2196F3;*/
+    padding: 0px;
+  }
+  .Product-item {
+    /*background-color: rgba(255, 255, 255, 0.5);*/
+    border: 1px solid rgba(0, 0, 0, 0.5);
+    padding: 3px;
+    font-size: 10px;
+    text-align: center;
+    cursor: pointer;
+  }

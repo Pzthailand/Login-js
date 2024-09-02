@@ -1,0 +1,70 @@
+  /*Profile*/
+
+  .Profile-Title{
+    margin-top: 50px;
+    font-size: 25px;
+    font-weight: 500;
+    color: #000000;
+    margin-bottom: 25px;
+  }
+
+  .Profile-container {
+    display: grid;
+    grid-template-columns: auto auto ;
+    gap: 0px;
+    background-color: none;
+    padding: 10px;
+    align-items: center;
+  }
+  
+  .Profile-container div {
+    /*background-color: rgba(255, 255, 255, 0.5);*/
+    padding: 5px 0px; 
+    font-size: 12px;
+    font-weight: 500;
+  }
+
+  .Profile-container label{
+    float: right;
+  }
+
+  .Profile-container input {
+    float: left;
+    height: 25px;
+  }
+
+
+  /*Account*/
+
+
+  .Account-Title{
+    margin-top: 50px;
+    font-size: 25px;
+    font-weight: 500;
+    color: #000000;
+    margin-bottom: 25px;
+  }
+
+  .Account-container {
+    display: grid;
+    grid-template-columns: auto auto;
+    gap: 0px;
+    background-color: none;
+    padding: 10px;
+  }
+  
+  .Account-container div {
+    /*background-color: rgba(255, 255, 255, 0.5);*/
+    padding: 5px 0px; 
+    font-size: 12px;
+    font-weight: 500;
+  }
+
+  .Account-container label{
+    float: right;
+  }
+
+  .Account-container input {
+    float: left;
+    height: 25px;
+  }

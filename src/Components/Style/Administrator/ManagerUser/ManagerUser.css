@@ -1,0 +1,17 @@
+  /*Grid Row Table Manage Users*/
+
+  .UserManager-container {
+    display: grid;
+    /*grid-template-columns: auto auto auto auto auto auto auto auto; /*Fix Row*/ 
+    grid-template-columns: 50px 170px 120px 120px 80px 100px 100px 180px 70px 300px 70px;
+    /*background-color: #2196F3;*/
+    padding: 0px;
+  }
+  .UserManager-item {
+    /*background-color: rgba(255, 255, 255, 0.5);*/
+    border: 1px solid rgba(0, 0, 0, 0.5);
+    padding: 3px;
+    font-size: 10px;
+    text-align: center;
+    cursor: pointer;
+  }

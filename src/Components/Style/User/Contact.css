@@ -1,0 +1,28 @@
+/*Contact*/
+
+.Contact-Title {
+    margin-top: 50px;
+    font-size: 25px;
+    font-weight: 500;
+    color: #000000;
+    margin-bottom: 25px;
+  }
+  
+  .Contact-container {
+    display: flex;
+    align-items: center;
+  }
+  
+  .Contact-container img {
+    width: 50px;
+    height: 50px;
+    margin-right: 10px;
+    margin-left: 10px;
+    border-radius: 0%;
+  }
+  
+  .Contact-container p {
+    font-size: 12px;
+    font-weight: 400;
+    color: #000000;
+  }
