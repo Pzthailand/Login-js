@@ -23,9 +23,8 @@ import VerifyChangePhone from "../Pages/Auth/Profile/ChangePhone/VerifyChangePho
 import ChangePhone from "../Pages/Auth/Profile/ChangePhone/ChangePhone.jsx"
 
 
-
 //Administrator
-import AdminPage from "../Pages/Administrator/AdminPage"
+import Adminitratordashboard from "../Pages/Administrator/Adminitratordashboard"
 import ManagerUsers from "../Pages/Administrator/ManagerUsers/ManagerUsers.jsx"
 import ManagerProducts from "../Pages/Administrator/ManagerProducts/ManagerProducts.jsx"
 import ProductCreate from "../Pages/Administrator/ManagerProducts/ProductCreate.jsx"
@@ -35,10 +34,17 @@ import ProductUpdate from "../Pages/Administrator/ManagerProducts/ProductUpdate.
 //User
 import UserPage from "../Pages/User/UserPage"
 import News from "../Pages/User/News"
-import Products from "../Pages/User/Products"
 import About from "../Pages/User/About"
 import Contact from "../Pages/User/Contact"
 import Error from "../Pages/User/Error"
+
+
+//Products
+import SearchProducts from "../Pages/User/Products/SearchProducts.jsx"
+import Products from "../Pages/User/Products/Products.jsx"
+import ProductsDetail from "../Pages/User/Products/ProductsDetails.jsx"
+import ProductsCarts from "../Pages/User/Products/ProductsCarts.jsx"
+import BuyNow from "../Pages/User/Products/BuyNow.jsx"
 
 //Routes
 import ProtectUserRoute from '../Routes/ProtectUserRoute'
@@ -49,7 +55,6 @@ export const Routed = ()=> {
 return(
     <div>
             <Routes>
-                
                 <Route path="/" element={<UserPage/>}/>
 
                 <Route path="/SignIn" element={
@@ -66,14 +71,32 @@ return(
                 <Route path="/VerifyForgotPasswordEmail" element={<VerifyForgotPasswordEmail/>}/>
                 <Route path="/ChangePassword" element={<ChangePassword/>}/>
 
-
                 <Route path="/UserPage" element={<UserPage/>}/>
                 <Route path="/News" element={<News/>}/>
+
+                <Route path="/SearchProducts" element={
+                        <SearchProducts/>
+                }/>
+
                 <Route path="/Products" element={
                     <ProtectUserRoute>
                         <Products/>
                     </ProtectUserRoute>
                 }/>
+
+                <Route path="/ProductsDetail/:id" element={
+                        <ProductsDetail />
+                }/>
+
+                <Route path="/BuyNow/:id" element={
+                        <BuyNow />
+                }/>
+
+                <Route path="/ProductsCarts" element={
+                        <ProductsCarts />
+                }/>
+
+
                 <Route path="/About" element={<About/>}/>
                 <Route path="/Contact" element={<Contact/>}/>
 
@@ -99,9 +122,9 @@ return(
 
                
                 {/*Role Adminstrator*/}
-                <Route path="/AdminPage" element={
+                <Route path="/Adminitratordashboard" element={
                     <ProtectAdminRoute>
-                        <AdminPage/>
+                        <Adminitratordashboard />
                     </ProtectAdminRoute>
                 }/>
 

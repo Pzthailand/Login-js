@@ -1,13 +1,5 @@
   /*SignUp*/
 
-  .SignUp-Title {
-    margin-top: 50px;
-    font-size: 25px;
-    font-weight: 500;
-    color: #000000;
-    margin-bottom: 25px;
-  }
-
   .SignUp-container {
     display: grid;
     grid-template-columns: auto auto;
@@ -19,7 +11,7 @@
   .SignUp-container div {
     /*background-color: rgba(255, 255, 255, 0.5);*/
     padding: 5px 0px; 
-    font-size: 12px;
+    font-size: 13px;
     font-weight: 500;
   }
 
@@ -29,5 +21,6 @@
 
   .SignUp-container input {
     float: left;
-    height: 25px;
+    height: 15px;
+    width: 300px;
   }

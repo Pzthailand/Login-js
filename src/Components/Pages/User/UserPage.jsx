@@ -1,16 +1,13 @@
 import { useDispatch , useSelector } from "react-redux";
 import { useNavigate } from "react-router-dom";
 
-import About from "./About";
-import Contact from "./Contact";
+import Products from "./Products/Products.jsx"
 
 function UserPage(){
-
-
+    
     return(
         <div>
-            <About />
-            <Contact />
+            <Products />
         </div>
     )
 }

@@ -1,114 +1,114 @@
-import { useState } from "react"
-//DomV6
-import { useNavigate , Link } from "react-router-dom";
-//Function
+import { useState } from "react";
+import { useNavigate, Link } from "react-router-dom";
 import { _SignIn } from "../../Functions/Auth";
-//Redux
 import { useDispatch } from "react-redux";
+import '../../Style/Auth/SignIn.css';
 
-import { useForm } from "react-hook-form"; //npm install react-hook-form
-//CSS
-import '../../Style/Auth/SignIn.css'
-
-function SignIn (){
-        const Navigate = useNavigate();
-        const Dispatch = useDispatch();//Redux
-        const [formData , SetFormData] = useState({
-            username:'',
-            password:'',
-        });
-        const [loading,setLoading] = useState(false); //Loading
-        const {username , password } = formData;
-        const onChange = (e) => {
-            SetFormData({...formData,[e.target.name]: e.target.value})
+function SignIn() {
+    const navigate = useNavigate();
+    const dispatch = useDispatch();
+    const [formData, SetFormData] = useState({ username: '', password: '' });
+    const [loading, setLoading] = useState(false);
+    const [error, setError] = useState(null);
+    
+    const { username, password } = formData;
+    
+    const onChange = (e) => {
+        SetFormData({ ...formData, [e.target.name]: e.target.value });
+        setError(null); // Clear error on input change
+    };
+    
+    const onSubmit = (e) => {
+        e.preventDefault();
+        setLoading(true);
+        
+        if (username === '' || password === '') {
+            setError('Please insert data...');
+            setLoading(false);
+            return;
         }
-        const onSubmit = (e) => {
-            setLoading(true)
-            e.preventDefault();
 
-            if(username,password === ''){
-                alert('Please insert data...') 
-                setLoading(false) //Loading
-            }else{
-             const value = {
-                username,
-                password
-             }
-             _SignIn(value) //Function
-             .then(response => {
-                 //console.log('Payload',response)
-                 setLoading(false)
-                 Dispatch({type:'LOGGED_IN_USERS',
-                    Payload: {  id:response.data.payload.user.id,
-                                username:response.data.payload.user.username,
-                                token:response.data.token, 
-                                role:response.data.payload.user.role,
-                                email:response.data.payload.user.email,
-                                phone:response.data.payload.user.phone
+        const value = { username, password };
+        _SignIn(value)
+            .then(response => {
+                setLoading(false);
+                dispatch({
+                    type: 'LOGGED_IN_USERS',
+                    Payload: {
+                        id: response.data.payload.user.id,
+                        username: response.data.payload.user.username,
+                        token: response.data.token,
+                        role: response.data.payload.user.role,
+                        email: response.data.payload.user.email,
+                        phone: response.data.payload.user.phone
                     }
-                 });
-                 localStorage.setItem('token',response.data.token)
-                 //console.log('role',response.data.payload.user.role)
-                 const role = (response.data.payload.user.role)
-                 roleBaseRedirect(role)
-             }).catch(err => {
-               setLoading(false)
-               alert(err.response.data)
-               //console.log(err.response.data)
-               //Check Server Error
-               console.error(err)
-             });   
-            }
-        }
-          //Roles Page Admin & Users
-          const roleBaseRedirect = (role) => {
-            if (role === 'admin'){
-                Navigate('/AdminPage')
-            }else{
-                Navigate('/UserPage')
-            }
-        }
+                });
+                localStorage.setItem('token', response.data.token);
+                roleBaseRedirect(response.data.payload.user.role);
+            })
+            .catch(err => {
+                setLoading(false);
+                setError(err.response.data);
+                console.error(err);
+            });
+    };
 
-       
+    const roleBaseRedirect = (role) => {
+        if (role === 'admin') {
+            navigate('/Adminitratordashboard');
+        } else {
+            navigate('/UserPage');
+        }   
+    };
 
-    return(
+    return (
         <div>
             <div>
                 <div>
-               {!loading ? (<div className="SignIn-Title">Sign In .... </div>) : (<div className="SignIn-Title">Loading...</div>)}
-               
-                    <form onSubmit={e=> onSubmit(e)}>
-                        <div className="SignIn-container">               
-                            <div><label> Username : </label></div>
-                                <div><input type="text" 
-                                    name="username" 
-                                    autoFocus
+                    <form onSubmit={onSubmit}>
+                        <div className="signin-container">
+                            <div>
+                                <label style={{color:'#007bff'}}>SIGN IN WITH USERNAME</label>
+                                <input
+                                    type="text"
+                                    name="username"
                                     placeholder="Username"
                                     maxLength={16}
-                                    onChange={e => onChange(e)}/>
-                                </div>
-
-                            <div><label> Password : </label></div>
-                                <div><input type="password" 
-                                    name="password" 
-                                    autoFocus 
-                                    placeholder="Password" 
-                                    onChange={e => onChange(e)}/>
+                                    autoFocus
+                                    onChange={onChange}
+                                    aria-label="Username"
+                                />
                             </div>
-                   
-                            <div></div> 
-                            <div><button >Sign In</button></div>
+                            <div>
+                                <label>PASSWORD</label>
+                                <input
+                                    type="password"
+                                    name="password"
+                                    placeholder="Password"
+                                    onChange={onChange}
+                                    aria-label="Password"
+                                />
+                            </div>
+                            
 
-                            <div></div>
-                            <div><Link to="/ForgotPassword">Forgot Password</Link></div>
-                            <div></div><Link to="/SignUpEmail">Sign Up</Link><div></div>
+                            <div>
+                                <button disabled={loading}>Sign in</button>
+                            </div>
 
-                        </div> 
+                            {error && <div className="error-message">{error}</div>}
+
+                            <div>
+                                <Link to="/ForgotPassword">Forgot Password</Link>
+                            </div>
+                            <div>
+                                <Link to="/SignUpEmail">Sign Up</Link>
+                            </div>
+                        </div>
                     </form>
                 </div>
             </div>
         </div>
-    )
-    }
+    );
+}
 
-    export default SignIn
+export default SignIn;

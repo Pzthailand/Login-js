@@ -26,10 +26,14 @@ const ProductUpdate = () => {
         .then(res => {
           console.log(res.data);
           setForm({
+            shopname: res.data.shopname,
+            brand: res.data.brand,
             name: res.data.name,
             detail: res.data.detail,
             price: res.data.price,
             group: res.data.group,
+            type: res.data.type,
+            quantity:res.data.quantity,
             file: null, // Reset file state
           });
           setFileold(res.data.file); // old Image URL
@@ -75,9 +79,35 @@ const ProductUpdate = () => {
 
   return (
     <div>
-      <div>Product Update</div>
+      <h2>Product Update</h2>
     <div>
       <form onSubmit={handleSubmit} encType='multipart/form-data'>
+
+
+      <div>
+          <label htmlFor="shopname">Shop Name:</label>
+          <input
+            type="text"
+            id="shopname"
+            name="shopname"
+            placeholder="Shop Name"
+            value={form.shopname}
+            onChange={onChange}
+          />
+        </div>
+
+        <div>
+          <label htmlFor="brand">Brand:</label>
+          <input
+            type="text"
+            id="brand"
+            name="brand"
+            placeholder="Brand"
+            value={form.brand}
+            onChange={onChange}
+          />
+        </div>
+
         <div>
           <label htmlFor="name">Name:</label>
           <input
@@ -120,11 +150,36 @@ const ProductUpdate = () => {
             type="text"
             id="group"
             name="group"
-            placeholder="Group"
+            placeholder="Product Group"
             value={form.group}
             onChange={onChange}
           />
         </div>
+
+        <div>
+          <label htmlFor="type">Type:</label>
+          <input
+            type="text"
+            id="type"
+            name="type"
+            placeholder="Product Type"
+            value={form.type}
+            onChange={onChange}
+          />
+        </div>
+
+        <div>
+          <label htmlFor="quantity">Quantity:</label>
+          <input
+            type="text"
+            id="quantity"
+            name="quantity"
+            placeholder="Product Quantity"
+            value={form.quantity}
+            onChange={onChange}
+          />
+        </div>
+
 
         <div>
           <label>Old Image:</label>

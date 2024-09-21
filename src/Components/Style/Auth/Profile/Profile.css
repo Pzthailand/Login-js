@@ -5,35 +5,42 @@
     font-size: 25px;
     font-weight: 500;
     color: #000000;
-    margin-bottom: 25px;
+    margin-bottom: 0px;
   }
 
-  .Profile-container {
+  .Profile-Container {
     display: grid;
-    grid-template-columns: auto auto ;
-    gap: 0px;
-    background-color: none;
-    padding: 10px;
-    align-items: center;
-  }
-  
-  .Profile-container div {
-    /*background-color: rgba(255, 255, 255, 0.5);*/
-    padding: 5px 0px; 
-    font-size: 12px;
-    font-weight: 500;
-  }
+    place-items: center; /* Centering both horizontally and vertically */
+    height: 100vh; /* Full height of the viewport */
+}
+
+.Profile-Form {
+    background-color: none; /* Optional: background color */
+    padding: 20px; /* Padding around the form */
+    border-radius: 8px; /* Rounded corners */
+    /* box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1); /* Optional: shadow effect */
+    width: 300px; /* Set a fixed width */
+}
 
   .Profile-container label{
     float: right;
   }
 
-  .Profile-container input {
+  .Profile-container input{
     float: left;
     height: 25px;
+    width: 200px;
   }
 
+  .Profileimages {
+    width: 200px;
+    height: 200px;
+    border-radius: 5px;
+    border: 2px solid white;
+  }
 
+  
+ 
   /*Account*/
 
 

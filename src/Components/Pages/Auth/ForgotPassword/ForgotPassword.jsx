@@ -4,6 +4,9 @@ import { _ForgotPassword } from '../../../Functions/Auth';
 import { useNavigate } from 'react-router-dom';
 import { useDispatch } from 'react-redux';
 
+//CSS
+import '../../../Style/Auth/ForgotPassword/ForgotPassword.css'
+
 const ForgotPassword = () => {
         const [username , setUsername] = useState('');
         const [email , setEmail] = useState('');
@@ -33,24 +36,26 @@ const ForgotPassword = () => {
         }
   return (
     <div>
-        <div style={{fontSize:15 , fontWeight:600}}>Forgot Password</div>
-                    <div><label> Username : </label></div>
-                    <div><input type="text" 
+        <h2 style={{marginBottom:25}}>Forgot Password</h2>
+                    <div><label> Username </label></div>
+                    <div><input style={{width:300,height:15}}  
+                                type="text" 
                                 name="username" 
                                 autoFocus 
                                 placeholder="Username" 
                                 onChange={e => setUsername(e.target.value)}/>
                         </div>
                         
-                    <div><label> Email : </label></div>
-                    <div><input type="text" 
+                    <div><label> Email </label></div>
+                    <div><input style={{width:300,height:15}} 
+                                type="text" 
                                 name="email" 
                                 autoFocus 
                                 placeholder="Email" 
                                 onChange={e => setEmail(e.target.value)}/>
                         </div>
 
-                    <button onClick={RequestPassword}>Request new password</button>
+                    <button style={{height:40,width:200}} onClick={RequestPassword}>Request new password</button>
 
     </div>
   )

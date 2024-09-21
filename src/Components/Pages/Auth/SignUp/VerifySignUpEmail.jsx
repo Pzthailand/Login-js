@@ -68,8 +68,8 @@ const VerifySignUpEmail = () => {
   return (
     <div>  
       <div>
-        <div style={{fontSize:15 , fontWeight:600}}>Verify OTP</div>
-        <input style={{textAlign:'center',height:20, width:200}}
+        <h2 style={{marginBottom:25}}>Verify OTP</h2>
+        <input style={{textAlign:'center',height:30, width:200}}
           name='inputotp'
           placeholder='0-9'
           maxLength={6}
@@ -85,8 +85,7 @@ const VerifySignUpEmail = () => {
       </label>
 
       <label disabled={seconds > 0 || minutes > 0 }
-          style={{float:'right',color:seconds > 0 || minutes > 0 ? "#85888b" : "#FF5630" }} onClick={Resendotp}>
-          Resend OTP</label>
+          style={{float:'right',color:seconds > 0 || minutes > 0 ? "#85888b" : "#FF5630" }} onClick={Resendotp}>Resend OTP</label>
       </div>
 
       <div>

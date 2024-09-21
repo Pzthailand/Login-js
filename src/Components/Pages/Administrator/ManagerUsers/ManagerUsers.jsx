@@ -114,10 +114,7 @@ function ManagerUsers(){
                 </div>
             </div >))}
 
-            <h5><Link to="/AdminPage">Back to Manager Page</Link></h5>
-
-
-                         
+            <h5><Link to="/Adminitratordashboard">Back to Manager Page</Link></h5>
     </div>
     )
 }

@@ -19,6 +19,14 @@ export const _ProductUpdate = async(id , value)=>
     await axios.put(instance+'/Product/'+id, value);
 
 export const _ProductRemove = async(id)=> 
-    await axios.delete(instance+'/Product/'+id );
+    await axios.delete(instance+'/Product/'+id);
+
+
+//Search Products By Group
+export const _ProductsType = async(value)=> 
+    await axios.post(instance+'/Productstype', value);
+
+
+
 
 

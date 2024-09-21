@@ -1,4 +1,4 @@
-.Product-Title{
+.ProductsManager-Title{
   margin-top: 50px;
   font-size: 25px;
   font-weight: 500;
@@ -10,7 +10,7 @@
 .Product-container {
     display: grid;
     /*grid-template-columns: auto auto auto auto auto auto auto auto; /*Fix Row*/ 
-    grid-template-columns: 50px 150px 100px 100px 100px 100px 100px 100px 70px;
+    grid-template-columns: 50px 150px 100px 100px 150px 100px 100px 100px 50px 100px 100px 70px;
     /*background-color: #2196F3;*/
     padding: 0px;
   }
@@ -21,4 +21,19 @@
     font-size: 10px;
     text-align: center;
     cursor: pointer;
+  }
+
+  img {
+    border-radius: 0%;
+  }
+
+  .Product-item:hover {
+    background-color: rgba(0, 0, 0, 0.1);
+    transition: background-color 0.3s ease;
+  }
+
+  @media (max-width: 768px) {
+    .Product-container {
+      grid-template-columns: repeat(auto-fill, minmax(100px, 1fr));
+    }
   }

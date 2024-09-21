@@ -1,33 +1,69 @@
-  /*SignIn*/
+.signin-container {
+  background-color: rgb(40, 40, 40); /* dark gray background for the sign-in form */
+  padding: 20px; /* Padding inside the container */
+  border-radius: 5px; /* Rounded corners */
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1); /* Subtle shadow for depth */
+  max-width: 500px; /* Limits the width of the form */
+  margin: auto; /* Centers the form horizontally */
+}
 
-  .SignIn-Title{
-    margin-top: 50px;
-    font-size: 25px;
-    font-weight: 500;
-    color: #000000;
-    margin-bottom: 25px;
-  }
+.signin-container div {
+  margin-bottom: 15px; /* Space between each form element */
+}
 
-  .SignIn-container {
-    display: grid;
-    grid-template-columns: auto auto;
-    gap: 0px;
-    background-color: none;
-    padding: 10px;
-  }
-  
-  .SignIn-container div {
-    /*background-color: rgba(255, 255, 255, 0.5);*/
-    padding: 5px 0px; 
-    font-size: 12px;
-    font-weight: 500;
-  }
+label {
+  color: white;
+  display: block; /* Makes labels take up a full line */
+  margin-bottom: 5px; /* Space below each label */
+  font-weight: bold; /* Makes labels bold */
+}
 
-  .SignIn-container label{
-    float: right;
-  }
+input[type="text"],
+input[type="password"] {
+  height: 15px;
+  width: 90%; /* Full width inputs */
+  padding: 10px; /* Padding inside the inputs */
+  border: 1px solid #ccc; /* Light gray border */
+  border-radius: px; /* Slightly rounded corners */
+  font-size: 13px; /* Larger font size for readability */
+}
 
-  .SignIn-container input {
-    float: left;
-    height: 20px;
-  }
+input[type="text"]:focus,
+input[type="password"]:focus {
+    border-color: #007bff; /* Blue border when input is focused */
+    outline: none; /* Removes default outline */
+} 
+
+a {
+  font-size: 12px; 
+  font-weight: 400;
+  color: white;
+  text-decoration: inherit;
+}
+a:hover {
+  color: #535bf2;
+}
+
+button {
+  height: 40px;
+  width: 40%; /* Full width button */
+  padding: 10px; /* Padding inside the button */
+  background-color: #007bff; /* Blue background color */
+  color:  #cccccc; /* White text color */
+  border: none; /* No border */
+  border-radius: none; /* Rounded corners */
+  font-size: 16px; /* Font size for the button */
+  cursor: pointer; /* Pointer cursor on hover */
+  margin-bottom: 15px;
+}
+
+button:disabled {
+  background-color: #cccccc; /* Gray background when disabled */
+  cursor: not-allowed; /* Indicates the button can't be clicked */
+}
+
+.error-message {
+    color: red; /* Red color for error messages */
+    font-size: 14px; /* Smaller font size for messages */
+    text-align: center; /* Center-aligns error messages */
+}

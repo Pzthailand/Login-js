@@ -47,10 +47,11 @@ const ChangePassword = () => {
     }
   return (
     <div>
-        <h2>Change Password</h2>
+        <h2 style={{marginBottom:25}}>Change Password</h2>
 
                 <div><label> Password : </label></div>
-                <div><input type="password" 
+                <div><input style={{width:300,height:15}}
+                    type="password" 
                     name="password"
                     autoFocus 
                     placeholder="Password" 
@@ -58,13 +59,14 @@ const ChangePassword = () => {
                 </div>
                         
                 <div><label> Confirm Password : </label></div>
-                <div><input type="password" 
+                <div><input style={{width:300,height:15}}
+                    type="password" 
                     name="passwordc" 
                     autoFocus 
                     placeholder="Confirm Password" 
                     onChange={e => setPasswordc(e.target.value)}/></div>
 
-                <div><button onClick={ChangePassword}>Change Password</button></div>
+                <div><button style={{height:40,width:200}} onClick={ChangePassword}>Change Password</button></div>
     </div>
   )
 }

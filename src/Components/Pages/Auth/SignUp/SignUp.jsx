@@ -79,7 +79,7 @@ return(
     <div>
         <div>
             <div>
-               {!Loading ? (<div className="SignUp-Title">Sign Up</div>) : (<div className="SignUp-Title">Loading...</div>)}
+               {!Loading ? (<h2 >Sign Up</h2>) : (<h2 >Loading...</h2>)}
                    <form onSubmit={e=> onSubmit(e)}>
 
                     <div className="SignUp-container">
@@ -129,17 +129,17 @@ return(
                         
 
                         <div><label> Phone Number : </label></div>
-                        <div><input type="phone" 
+                        <div><input 
+                            type="phone" 
                             name="phone" 
                             autoFocus 
                             placeholder="099-999-9999" 
-                            maxLength={10}
                             onChange={e => onChange(e)}/>
                         </div>
                         
 
                         <div><label> Adress : </label> </div>
-                        <div><input style={{height:100}} 
+                        <div><input style={{height:100,textAlign:'left'}} 
                             type="text" 
                             name="addres" 
                             autoFocus 
@@ -158,7 +158,7 @@ return(
 
                         <div></div> {/*Fix Grid*/}
 
-                        <div><button>Create Account</button></div>
+                        <div><button style={{height:40,width:200}}>Create Account</button></div>
                     </div>
 
                     </form>

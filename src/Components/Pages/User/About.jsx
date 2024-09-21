@@ -22,7 +22,7 @@ function About(){
         <div className="About-Title">About</div>
 
         <div className="About-container" >
-            <p><b>Hello</b> i'm Developer Website & Application i'm Nickname Papzi 30 years old</p>
+            <><b>Hello</b> i'm Developer Website & Application i'm Nickname Papzi 30 years old</>
             <img src={Sad} />
             <p>I no experience</p>
         </div>

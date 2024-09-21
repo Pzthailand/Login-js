@@ -1,0 +1,26 @@
+input {
+  font-size: 12px;
+  font-weight: normal;
+  margin: 5px;
+  cursor: text;
+  float: center;
+  text-align:left;
+  float: left;
+  width: 200px;
+  height: 20px;
+}
+
+label { 
+  display: block;
+  font-size: 12px;
+  margin: 5px;
+  cursor: default;
+  float: left;
+}
+
+.Productimages {
+  width: 200px;
+  height: 200px;
+  border-radius: 5px;
+  border: 2px solid black;
+}

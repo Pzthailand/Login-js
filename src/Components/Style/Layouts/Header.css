@@ -1,126 +1,117 @@
-/*Navbar Routes Menu*/
+/* Fixed Header Styles */
+header {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  background-color: rgb(40, 40, 40);
+  padding: 10px;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+  z-index: 1000;
+}
 
-ul {
-    list-style-type: none;
-    margin: 0;
-    padding: 0;
-    overflow: hidden;
-    background-color: #000000;
-    position: absolute;
-    top: 0;
-    left: 0;
-    right: 0;
-    width: 100%;
-  }
-  
-  ul {
-    position: fixed; /*Fix Top Header*/
-    top: 0;
-    left: 0;
-    right: 0;
-    width: 100%;
-  }
-  
-  li {
-    float: inline-start;
-  }
-  
-  /*Border Navbar*/
-  /*li {
-    border-right: 1px solid #bbb;
-  }
-  
-  li {
-    border-right: 1px solid #bbb;
-  }*/
-  
-  /*Border Navbar*/
-  
-  li a {
-    display: block;
-    color: white;
-    text-align: center;
-    font-weight: 700;
-    padding: 5px 40px;
-    text-decoration: none;
-  }
-  
-  li a:hover:not(.active) {
-    background-color: none;
-  }
-  
-  /*.active {
-    background-color:   #0088ff;
-  }*/
+/* Push down the body content */
+body {
+  padding-top: 50px; /* Adjust based on header height */
+}
 
-  .topnav-right {
-    float: right;
-    position: relative;
-  }
+/* Navigation Styles */
+nav {
+  display: flex;
+  align-items: center;
+}
 
-  /*Navbar Routes Menu*/
+/* Nav List Styles */
+.nav-list {
+  list-style-type: none;
+  display: flex;
+  margin: 0;
+  padding: 0;
+  align-items: center;
+}
 
+/* Nav List Item Styles */
+.nav-list li {
+  margin: 0 15px;
+}
 
-  /*Dropdown Profile Menu*/
+/* Link Styles */
+.nav-list a {
+  text-decoration: none;
+  color: white;
+  padding: 10px 15px;
+  border-radius: 2px;
+  transition: background-color 0.3s, color 0.3s;
+  width: 80px;
+}
 
-  .dropdown {
-    position: relative;
-    display: block;
-    color: white;
-  }
-  
-  .dropdown-content {
-    margin-top: 25px; /*Fix Menu Buttom Username*/
-    display: none;
-    position:  fixed; /*Fix Menu 1 Row*/
-    color: #000000;
-    background-color: #000000;
-    min-width: 150px;
-    min-height: 80px;
-    padding: 10px 10px;
-    z-index: 1;
-    text-align: center;
-    float: right;
-    cursor: pointer;
-  }
+/* Hover Effects for Links */
+.nav-list a:hover, .dropdown-content li a:hover {
+  background-color: rgba(255, 255, 255, 0.2);
+  color: #007bff; /* Change text color on hover */
+}
 
-  .dropdown:hover .dropdown-content {
-    display: block;
-  }
+/* Focus Styles */
+.nav-list a:focus, .dropdown-content li a:focus {
+  outline: 2px solid lightblue; /* Focus outline for accessibility */
+}
 
-  img {
-    border-radius: 50%;
-    margin-left: 10px;
-    border: 10px;
-    
+/* Right-Aligned Section */
+.topnav-right {
+  margin-left: auto;
+}
+
+/* Dropdown Styles */
+.dropdown {
+  position: relative;
+}
+
+.dropdown-content {
+  display: none;
+  position: absolute;
+  background-color: rgb(40, 40, 40);
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+  min-width: 150px;
+  z-index: 1;
+}
+
+.dropdown:hover .dropdown-content {
+  display: block;
+  margin-left: -20px;
+}
+
+/* Dropdown Item Styles */
+.dropdown-content li {
+  padding: 10px 15px;
+}
+
+.dropdown-content li a {
+  display: block;
+  color: white;
+}
+
+/* Hover Effects for Dropdown Items */
+.dropdown-content li a:hover {
+  background-color: gray;
+  color: #007bff;
+}
+
+/* Responsive Styles */
+@media (max-width: 768px) {
+  .nav-list {
+    flex-direction: column;
+    align-items: flex-start;
   }
 
-  /*Dropdown Profile Menu*/
-
-  /*.dropdown {
-    position: relative;
-    display: block;
-    font-weight: bold;
-    color: white;
+  .nav-list li {
+    margin: 5px auto;
   }
-  
-  .dropdown-content {
-    display: none;
-    position:  relative;
-    color: #000000;
-    background-color: #f9f9f9;
-    min-width: 125px;
-    min-height: 80px;
-    box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
-    padding: 20px 15px;
-    z-index: 1;
-    text-align: center;
-    float: right;
-    cursor: pointer;
-  }
-  
-  .dropdown:hover .dropdown-content {
-    display: block;
-  }*/
+}
 
-  
+@media (min-width: 769px) {
+  .nav-list {
+    flex-direction: row;
+    justify-content: center; /* Centers the items */
+    width: 100%; /* Ensure it takes full width for centering */
+  }
+}
